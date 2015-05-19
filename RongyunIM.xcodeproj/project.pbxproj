@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03EEAFC4397ACF413690D648 /* libPods-RongyunIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */; };
+		669F66231B0B18D40045B9C0 /* CJW.m in Sources */ = {isa = PBXBuildFile; fileRef = 669F66221B0B18D40045B9C0 /* CJW.m */; };
+		669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F66241B0B20470045B9C0 /* ChatListViewController.swift */; };
 		B6D1DE991B0A230A00711E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DE981B0A230A00711E82 /* AppDelegate.swift */; };
 		B6D1DE9B1B0A230A00711E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DE9A1B0A230A00711E82 /* ViewController.swift */; };
 		B6D1DE9E1B0A230A00711E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D1DE9C1B0A230A00711E82 /* Main.storyboard */; };
@@ -26,6 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		068257BD17367182CA8EF21F /* Pods-RongyunIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RongyunIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RongyunIM/Pods-RongyunIM.release.xcconfig"; sourceTree = "<group>"; };
+		669F66201B0B18D30045B9C0 /* RongyunIM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RongyunIM-Bridging-Header.h"; sourceTree = "<group>"; };
+		669F66211B0B18D40045B9C0 /* CJW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJW.h; sourceTree = "<group>"; };
+		669F66221B0B18D40045B9C0 /* CJW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJW.m; sourceTree = "<group>"; };
+		669F66241B0B20470045B9C0 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		AA9461D90CE28AC6A52E0DD2 /* Pods-RongyunIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RongyunIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RongyunIM/Pods-RongyunIM.debug.xcconfig"; sourceTree = "<group>"; };
+		AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RongyunIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D1DE931B0A230A00711E82 /* RongyunIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RongyunIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D1DE971B0A230A00711E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6D1DE981B0A230A00711E82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03EEAFC4397ACF413690D648 /* libPods-RongyunIM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B695BD2D051D8026053A2E6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B6D1DE8A1B0A230A00711E82 = {
 			isa = PBXGroup;
 			children = (
 				B6D1DE951B0A230A00711E82 /* RongyunIM */,
 				B6D1DEAB1B0A230A00711E82 /* RongyunIMTests */,
 				B6D1DE941B0A230A00711E82 /* Products */,
+				B83FB0ADB4ACCBF79D6212E7 /* Pods */,
+				B695BD2D051D8026053A2E6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +104,10 @@
 				B6D1DE9F1B0A230A00711E82 /* Images.xcassets */,
 				B6D1DEA11B0A230A00711E82 /* LaunchScreen.xib */,
 				B6D1DE961B0A230A00711E82 /* Supporting Files */,
+				669F66211B0B18D40045B9C0 /* CJW.h */,
+				669F66221B0B18D40045B9C0 /* CJW.m */,
+				669F66201B0B18D30045B9C0 /* RongyunIM-Bridging-Header.h */,
+				669F66241B0B20470045B9C0 /* ChatListViewController.swift */,
 			);
 			path = RongyunIM;
 			sourceTree = "<group>";
@@ -112,6 +137,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B83FB0ADB4ACCBF79D6212E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA9461D90CE28AC6A52E0DD2 /* Pods-RongyunIM.debug.xcconfig */,
+				068257BD17367182CA8EF21F /* Pods-RongyunIM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6D1DEB21B0A230A00711E82 /* Build configuration list for PBXNativeTarget "RongyunIM" */;
 			buildPhases = (
+				23E8A37A34F13015E59C25E6 /* Check Pods Manifest.lock */,
 				B6D1DE8F1B0A230A00711E82 /* Sources */,
 				B6D1DE901B0A230A00711E82 /* Frameworks */,
 				B6D1DE911B0A230A00711E82 /* Resources */,
+				BCB3EC7EB09CE35891AEA17A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +243,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23E8A37A34F13015E59C25E6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BCB3EC7EB09CE35891AEA17A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RongyunIM/Pods-RongyunIM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B6D1DE8F1B0A230A00711E82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669F66231B0B18D40045B9C0 /* CJW.m in Sources */,
 				B6D1DE9B1B0A230A00711E82 /* ViewController.swift in Sources */,
+				669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */,
 				B6D1DE991B0A230A00711E82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,21 +409,30 @@
 		};
 		B6D1DEB31B0A230A00711E82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA9461D90CE28AC6A52E0DD2 /* Pods-RongyunIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RongyunIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RongyunIM/RongyunIM-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B6D1DEB41B0A230A00711E82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 068257BD17367182CA8EF21F /* Pods-RongyunIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RongyunIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RongyunIM/RongyunIM-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -409,6 +489,7 @@
 				B6D1DEB41B0A230A00711E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6D1DEB51B0A230A00711E82 /* Build configuration list for PBXNativeTarget "RongyunIMTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +498,7 @@
 				B6D1DEB71B0A230A00711E82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
