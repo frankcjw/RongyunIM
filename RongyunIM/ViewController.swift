@@ -12,6 +12,7 @@ let RONGCLOUD_IM_APPKEY = "0vnjpoadn51tz"
 let SECRET = "BItzA3xnuUY"
 let TOKEN  = "ye/RMvPpwki49cfEhSoFGy2GkrVUQvL0GUEcUhn8by94uP4K0hqkrvA0i3dUobQjVGYZk9bTRtfZPt2ZrHF9NrWALH7ayqzk"
 let TOKEN2 = "2BaCLqwmomLn8g/oziOoo5E/5bdhTP0LFYPGfeRoPvPtx5/dnYqHaor+VY9h9DXzn0/iRZSMwtITsErf6SWVL/C6KJlawn48"
+
 class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 
     override func viewDidLoad() {
@@ -75,7 +76,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
         RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: tk)
         RCIM.sharedKit().connectWithToken(tk, success: { (userId) -> Void in
             println("userId \(userId)")
-            self.showChatView()
+//            self.showChatView()
             }) { (status) -> Void in
                 println("status \(status)")
         }

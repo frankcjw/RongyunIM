@@ -4,3 +4,4 @@
 
 //#import "RCIMClientHeader.h"
 #import <RongIMKit/RongIMKit.h>
+#import "WebViewJavascriptBridge.h"
