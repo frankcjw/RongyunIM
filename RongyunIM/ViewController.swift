@@ -11,7 +11,7 @@ import UIKit
 let RONGCLOUD_IM_APPKEY = "0vnjpoadn51tz"
 let SECRET = "BItzA3xnuUY"
 let TOKEN  = "ye/RMvPpwki49cfEhSoFGy2GkrVUQvL0GUEcUhn8by94uP4K0hqkrvA0i3dUobQjVGYZk9bTRtfZPt2ZrHF9NrWALH7ayqzk"
-let TOKEN2 = "2BaCLqwmomLn8g/oziOoo5E/5bdhTP0LFYPGfeRoPvPtx5/dnYqHaor+VY9h9DXzn0/iRZSMwtITsErf6SWVL/C6KJlawn48"
+let TOKEN2 = "wJOlx+BzeiD0xP0vsmWkuS2GkrVUQvL0GUEcUhn8by94uP4K0hqkrqzd6UVwm8XtVGYZk9bTRtfZPt2ZrHF9NjOQE0FNLNKb"
 
 class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 
@@ -21,6 +21,16 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //hello
 //        RCIMClient.sharedRCIMClient()
         getUserInfo()
+        CJWHttpUtils.manager().requestUrl("http://app.cenjiawen.com:8008/yfg?uid=12&name=cjw", param: nil, shouldCache: false, success: { (resp) -> Void in
+            println("\(resp)")
+            if let info = resp["result"] as? String {
+                println("\(info)")
+            }else{
+                println("error")
+            }
+        }) { () -> Void in
+            //
+        }
     }
     
     func getUserInfo(){
