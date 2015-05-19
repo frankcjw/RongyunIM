@@ -10,6 +10,7 @@
 		03EEAFC4397ACF413690D648 /* libPods-RongyunIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */; };
 		669F66231B0B18D40045B9C0 /* CJW.m in Sources */ = {isa = PBXBuildFile; fileRef = 669F66221B0B18D40045B9C0 /* CJW.m */; };
 		669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F66241B0B20470045B9C0 /* ChatListViewController.swift */; };
+		669F66271B0B39840045B9C0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F66261B0B39840045B9C0 /* ChatViewController.swift */; };
 		B6D1DE991B0A230A00711E82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DE981B0A230A00711E82 /* AppDelegate.swift */; };
 		B6D1DE9B1B0A230A00711E82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DE9A1B0A230A00711E82 /* ViewController.swift */; };
 		B6D1DE9E1B0A230A00711E82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D1DE9C1B0A230A00711E82 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		669F66211B0B18D40045B9C0 /* CJW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJW.h; sourceTree = "<group>"; };
 		669F66221B0B18D40045B9C0 /* CJW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJW.m; sourceTree = "<group>"; };
 		669F66241B0B20470045B9C0 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		669F66261B0B39840045B9C0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AA9461D90CE28AC6A52E0DD2 /* Pods-RongyunIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RongyunIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RongyunIM/Pods-RongyunIM.debug.xcconfig"; sourceTree = "<group>"; };
 		AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RongyunIM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D1DE931B0A230A00711E82 /* RongyunIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RongyunIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				669F66221B0B18D40045B9C0 /* CJW.m */,
 				669F66201B0B18D30045B9C0 /* RongyunIM-Bridging-Header.h */,
 				669F66241B0B20470045B9C0 /* ChatListViewController.swift */,
+				669F66261B0B39840045B9C0 /* ChatViewController.swift */,
 			);
 			path = RongyunIM;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				669F66231B0B18D40045B9C0 /* CJW.m in Sources */,
 				B6D1DE9B1B0A230A00711E82 /* ViewController.swift in Sources */,
 				669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */,
+				669F66271B0B39840045B9C0 /* ChatViewController.swift in Sources */,
 				B6D1DE991B0A230A00711E82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

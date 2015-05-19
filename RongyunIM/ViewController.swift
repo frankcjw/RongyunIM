@@ -46,13 +46,15 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     }
 
     func showChatView(){
-        let conversationVC = RCConversationViewController()
+        let conversationVC = ChatViewController()
         conversationVC.conversationType = RCConversationType.ConversationType_PRIVATE //会话类型，这里设置为 PRIVATE 即发起单聊会话。
 //        RCConversationType.ConversationType_PRIVATE
 
         conversationVC.targetId = "402880ef4a"; // 接收者的 targetId，这里为举例。
         conversationVC.targetName = "cao"; // 接受者的 username，这里为举例。
-        conversationVC.title = "nam1"; // 会话的 title。
+        conversationVC.title = "聊天的名字"; // 会话的 title。
+//        conversationVC.inp
+//        conversationVC.chatSessionInputBarControl.setInputBarType(RCChatSessionInputBarControlType.DefaultType , style: RCChatSessionInputBarControlStyle.Style9)
 //        conversationVC.inp
         conversationVC.setMessageAvatarStyle(RCUserAvatarStyle.Cycle)
         let navi = UINavigationController(rootViewController: conversationVC)
