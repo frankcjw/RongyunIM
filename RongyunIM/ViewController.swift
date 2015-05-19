@@ -41,8 +41,6 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             user.portraitUri = "http://avatar.wolaizuo.com/100000_avatar_lOHMcaS8Pv.jpg";
 
         }
-        
-        
         return completion(user);
     }
 
@@ -76,7 +74,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
         RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: tk)
         RCIM.sharedKit().connectWithToken(tk, success: { (userId) -> Void in
             println("userId \(userId)")
-//            self.showChatView()
+            self.showChatView()
             }) { (status) -> Void in
                 println("status \(status)")
         }

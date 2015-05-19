@@ -15,7 +15,6 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     
     func send(){
-        println("sss")
         bridge.send("caocao")
     }
     
@@ -23,7 +22,7 @@ class WebViewController: UIViewController {
         var bar = UIBarButtonItem(title: "hello", style: UIBarButtonItemStyle.Plain, target: self, action: "send")
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = bar
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://app.cenjiawen.com/ry/table.html")!))
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://app.cenjiawen.com/ry/js.html")!))
         bridge = WebViewJavascriptBridge(forWebView: webView, handler: { (object, callback:WVJBResponseCallback!) -> Void in
             println("object \(object)")
             if object is NSDictionary {
