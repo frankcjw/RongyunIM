@@ -19,8 +19,29 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     var targetId = "asd"
     var token = ""
     
+    @IBAction func check(sender: AnyObject) {
+        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: TOKEN)
+        
+        RCIM.sharedKit().connectWithToken(TOKEN, success: { (userId) -> Void in
+            println("userId \(userId)")
+            let count = RCIMClient.sharedClient().getUnreadCount(RCConversationType.ConversationType_PRIVATE, targetId: "402880ef4a")
+            println("count \(count)")
+            }) { (status) -> Void in
+                println("status \(status)")
+        }
+    }
+    
+    @IBAction func kefu(sender: AnyObject) {
+        token = TOKEN
+        targetId = "AlnkVmuTDY8="
+        targetName = "客服"
+        connect()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
 //hello
 //        RCIMClient.sharedRCIMClient()
@@ -46,6 +67,10 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
         
         self.view.addSubview(bt1)
         self.view.addSubview(bt2)
+    }
+    
+    @IBAction func chatList(sender: AnyObject) {
+        showChatList()
     }
     
     func user1(){
@@ -82,9 +107,15 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             user.name = "bbb";
             //http://avatar.wolaizuo.com/100000_avatar_lOHMcaS8Pv.jpg
             user.portraitUri = "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008"
-        }else{
+        }else if userId == "AlnkVmuTDY8="{
+            user.name = "客服";
+            user.portraitUri = "http://avatar.wolaizuo.com/100030_avatar_uKW7mtOjXT.jpg";
+        }
+        else{
             user.name = "aaa";
             user.portraitUri = "http://avatar.wolaizuo.com/100000_avatar_lOHMcaS8Pv.jpg";
+//            user.portraitUri = "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008"
+
 
         }
         return completion(user);
@@ -100,8 +131,6 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 
     func showChatView(){
         conversationVC.conversationType = RCConversationType.ConversationType_PRIVATE //会话类型，这里设置为 PRIVATE 即发起单聊会话。
-//        RCConversationType.ConversationType_PRIVATE
-
         conversationVC.targetId = targetId; // 接收者的 targetId，这里为举例。
         conversationVC.targetName = targetName; // 接受者的 username，这里为举例。
         conversationVC.title = targetName; // 会话的 title。
@@ -116,9 +145,37 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             //
         }
     }
+    let chatListVC = ChatListViewController()
+    
+    func dismissChatList(){
+        chatListVC.dismissViewControllerAnimated(true, completion: { () -> Void in
+            //
+        })
+    }
+    
+    func showChatList(){
+        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: TOKEN2)
+        
+        RCIM.sharedKit().connectWithToken(TOKEN2, success: { (userId) -> Void in
+            println("userId \(userId)")
+            self.getUserInfo()
+            let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissChatList")
+            self.chatListVC.navigationItem.leftBarButtonItem = bar
+            
+            let navi = UINavigationController(rootViewController: self.chatListVC)
+            
+            self.presentViewController(navi, animated: true) { () -> Void in
+                //
+            }
+            }) { (status) -> Void in
+                println("status \(status)")
+        }
+        
+    }
     
     func connect(){
         RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: token)
+
         RCIM.sharedKit().connectWithToken(token, success: { (userId) -> Void in
             println("userId \(userId)")
             self.showChatView()
