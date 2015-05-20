@@ -24,6 +24,12 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
         
         RCIM.sharedKit().connectWithToken(TOKEN, success: { (userId) -> Void in
             println("userId \(userId)")
+            
+            let client = RCIMClient.sharedClient()
+            let tl:NSArray = [RCConversationType.ConversationType_PRIVATE.rawValue]
+            let array = client.getConversationList(tl as [AnyObject])
+            println("array \(array)")
+
             let count = RCIMClient.sharedClient().getUnreadCount(RCConversationType.ConversationType_PRIVATE, targetId: "402880ef4a")
             println("count \(count)")
             }) { (status) -> Void in
