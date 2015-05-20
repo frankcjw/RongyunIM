@@ -26,11 +26,12 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             println("userId \(userId)")
             
             let client = RCIMClient.sharedClient()
-            let tl:NSArray = [RCConversationType.ConversationType_PRIVATE.rawValue]
-            let array = client.getConversationList(tl as [AnyObject])
-            println("array \(array)")
+            let tl:NSArray = [1]
+            if let array = client.getConversationList(tl as [AnyObject]) {
+                println("array \(array.count)")
+            }
 
-            let count = RCIMClient.sharedClient().getUnreadCount(RCConversationType.ConversationType_PRIVATE, targetId: "402880ef4a")
+            let count = RCIMClient.sharedClient().getUnreadCount(RCConversationType.ConversationType_PRIVATE, targetId: "402880ef4c")
             println("count \(count)")
             }) { (status) -> Void in
                 println("status \(status)")
@@ -48,6 +49,10 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var imgv = UIImageView(frame: CGRectMake(100, 100, 300, 300))
+        imgv.sd_setImageWithURL(NSURL(string: "http://ww4.sinaimg.cn/bmiddle/62f87eb4gw1esarnsg3aug20bv06o4qt.gif"))
+        imgv.backgroundColor = UIColor.blueColor()
+        self.view.addSubview(imgv)
         // Do any additional setup after loading the view, typically from a nib.
 //hello
 //        RCIMClient.sharedRCIMClient()
