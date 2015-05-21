@@ -7,3 +7,4 @@
 #import "WebViewJavascriptBridge.h"
 #import "CJWUtils.h"
 #import "UIImageView+WebCache.h"
+#import "JSONKit.h"

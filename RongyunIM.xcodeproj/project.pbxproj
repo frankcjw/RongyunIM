@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03EEAFC4397ACF413690D648 /* libPods-RongyunIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF85F66F9E5F4EBC88D0D729 /* libPods-RongyunIM.a */; };
+		66286F7A1B0DBBBF005A8626 /* RYChatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66286F791B0DBBBF005A8626 /* RYChatUtils.swift */; };
 		669F66231B0B18D40045B9C0 /* CJW.m in Sources */ = {isa = PBXBuildFile; fileRef = 669F66221B0B18D40045B9C0 /* CJW.m */; };
 		669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F66241B0B20470045B9C0 /* ChatListViewController.swift */; };
 		669F66271B0B39840045B9C0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669F66261B0B39840045B9C0 /* ChatViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		068257BD17367182CA8EF21F /* Pods-RongyunIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RongyunIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RongyunIM/Pods-RongyunIM.release.xcconfig"; sourceTree = "<group>"; };
+		66286F791B0DBBBF005A8626 /* RYChatUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RYChatUtils.swift; sourceTree = "<group>"; };
 		669F66201B0B18D30045B9C0 /* RongyunIM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RongyunIM-Bridging-Header.h"; sourceTree = "<group>"; };
 		669F66211B0B18D40045B9C0 /* CJW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJW.h; sourceTree = "<group>"; };
 		669F66221B0B18D40045B9C0 /* CJW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJW.m; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				669F66241B0B20470045B9C0 /* ChatListViewController.swift */,
 				669F66261B0B39840045B9C0 /* ChatViewController.swift */,
 				B64012201B0B6CA7009FAF8B /* WebViewController.swift */,
+				66286F791B0DBBBF005A8626 /* RYChatUtils.swift */,
 			);
 			path = RongyunIM;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				669F66231B0B18D40045B9C0 /* CJW.m in Sources */,
+				66286F7A1B0DBBBF005A8626 /* RYChatUtils.swift in Sources */,
 				B64012211B0B6CA7009FAF8B /* WebViewController.swift in Sources */,
 				B6D1DE9B1B0A230A00711E82 /* ViewController.swift in Sources */,
 				669F66251B0B20470045B9C0 /* ChatListViewController.swift in Sources */,
