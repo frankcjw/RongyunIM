@@ -18,9 +18,9 @@ let kefuID = "AlnkVmuTDY8="
 let hostID = "402880ef4a"
 class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 
-    var targetName = "aaa"
-    var targetId = "asd"
-    var token = ""
+//    var targetName = "aaa"
+//    var targetId = "asd"
+//    var token = ""
     
     typealias TokenBlock = (token:String) -> ()
     typealias ConnectBlock = () -> ()
@@ -39,7 +39,8 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     
     func chat(userID:String,targetID:String,targetName:String){
         connect(userID, block: { () -> () in
-            self.showChatView(targetID, targetName: targetName)
+//            self.showChatView(targetID, targetName: targetName)
+            self.showChatView(userID, targetId: targetID, targetName: targetName)
         })
     }
     
@@ -86,30 +87,36 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 
                     let objectName = message.objectName
                     if objectName == "RC:ImgMsg" {
+                        println("iiimg")
                         let imgContent = message.content as! RCImageMessage
                         self.imgv.sd_setImageWithURL(NSURL(string: "\(imgContent.imageUrl)"))
                     }else if objectName == "RC:TxtMsg" {
                         let txtMsg = message.content as! RCTextMessage
                         if let dict = message.content.encode().objectFromJSONData() as? NSDictionary {
+                            let sender = message.senderUserId
+                            var who = "[我]"
+                            if sender == targetId {
+                                who = "[客服]"
+                            }
                             if let content = dict["content"] as? String {
 //                                println("\(timeString) content \(content)")
-                                txt = txt + "\(timeString)\n\(txtMsg.content)\n"
+                                txt = txt + "\(timeString) \(who)\n\(txtMsg.content)\n"
                             }
                         }
                     }
                 }
             }
-            var alert = UIAlertView(title: "客服消息", message: txt, delegate: nil, cancelButtonTitle: "cancel")
+            var alert = UIAlertView(title: "客服消息", message: txt, delegate: nil, cancelButtonTitle: "确定")
             alert.show()
             client.disconnect()
         })
     }
     
     @IBAction func kefu(sender: AnyObject) {
-        token = TOKEN
-        targetId = kefuID
-        targetName = "客服"
-        connect()
+//        token = TOKEN
+//        targetId = kefuID
+//        targetName = "客服"
+//        connect()
         chat(hostID, targetID: kefuID, targetName: "客服")
     }
     
@@ -161,7 +168,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //            self.showChatView()
 //        })
         var tgId = "402880ef4b"
-        tgId = kefuID
+//        tgId = kefuID
         chat("402880ef4a", targetID: tgId, targetName: tgId)
         
     }
@@ -174,7 +181,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //            self.showChatView()
 //        })
         let tgId = "402880ef4a"
-        chat(kefuID, targetID: tgId, targetName: tgId)
+        chat("402880ef4b", targetID: tgId, targetName: tgId)
 
     }
     
@@ -213,27 +220,27 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     
     let conversationVC = ChatViewController()
 
-    func showChatView(){
+//    func showChatView(){
+//        conversationVC.conversationType = RCConversationType.ConversationType_PRIVATE //会话类型，这里设置为 PRIVATE 即发起单聊会话。
+//        conversationVC.targetId = targetId; // 接收者的 targetId，这里为举例。
+//        conversationVC.targetName = targetName; // 接受者的 username，这里为举例。
+//        conversationVC.title = targetName; // 会话的 title。
+//        conversationVC.setMessageAvatarStyle(RCUserAvatarStyle.Cycle)
+//        
+//        let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dissmiss")
+//        conversationVC.navigationItem.leftBarButtonItem = bar
+//        
+//        let navi = UINavigationController(rootViewController: conversationVC)
+//
+//        self.presentViewController(navi, animated: true) { () -> Void in
+//            //
+//        }
+//    }
+    func showChatView(userId:String,targetId:String,targetName:String){
         conversationVC.conversationType = RCConversationType.ConversationType_PRIVATE //会话类型，这里设置为 PRIVATE 即发起单聊会话。
         conversationVC.targetId = targetId; // 接收者的 targetId，这里为举例。
         conversationVC.targetName = targetName; // 接受者的 username，这里为举例。
-        conversationVC.title = targetName; // 会话的 title。
-        conversationVC.setMessageAvatarStyle(RCUserAvatarStyle.Cycle)
-        
-        let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dissmiss")
-        conversationVC.navigationItem.leftBarButtonItem = bar
-        
-        let navi = UINavigationController(rootViewController: conversationVC)
-
-        self.presentViewController(navi, animated: true) { () -> Void in
-            //
-        }
-    }
-    func showChatView(targetId:String,targetName:String){
-        conversationVC.conversationType = RCConversationType.ConversationType_PRIVATE //会话类型，这里设置为 PRIVATE 即发起单聊会话。
-        conversationVC.targetId = targetId; // 接收者的 targetId，这里为举例。
-        conversationVC.targetName = targetName; // 接受者的 username，这里为举例。
-        conversationVC.title = targetName; // 会话的 title。
+        conversationVC.title = userId + " -> " + targetName; // 会话的 title。
         conversationVC.setMessageAvatarStyle(RCUserAvatarStyle.Cycle)
         
         let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dissmiss")
@@ -255,11 +262,23 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
     }
     
     func showChatList(){
-        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: TOKEN2)
-        
-        RCIM.sharedKit().connectWithToken(TOKEN2, success: { (userId) -> Void in
-            println("userId \(userId)")
-            self.getUserInfo()
+//        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: TOKEN2)
+//        
+//        RCIM.sharedKit().connectWithToken(TOKEN2, success: { (userId) -> Void in
+//            println("userId \(userId)")
+//            self.getUserInfo()
+//            let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissChatList")
+//            self.chatListVC.navigationItem.leftBarButtonItem = bar
+//            
+//            let navi = UINavigationController(rootViewController: self.chatListVC)
+//            
+//            self.presentViewController(navi, animated: true) { () -> Void in
+//                //
+//            }
+//            }) { (status) -> Void in
+//                println("status \(status)")
+//        }
+        connect(hostID, block: { () -> () in
             let bar = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.Plain, target: self, action: "dismissChatList")
             self.chatListVC.navigationItem.leftBarButtonItem = bar
             
@@ -268,21 +287,19 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             self.presentViewController(navi, animated: true) { () -> Void in
                 //
             }
-            }) { (status) -> Void in
-                println("status \(status)")
-        }
+        })
         
     }
     
-    func connect(){
-        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: token)
-        RCIM.sharedKit().connectWithToken(token, success: { (userId) -> Void in
-            println("userId \(userId)")
-            self.showChatView()
-            }) { (status) -> Void in
-                println("status \(status)")
-        }
-    }
+//    func connect(){
+//        RCIM.sharedKit().initWithAppKey(RONGCLOUD_IM_APPKEY, deviceToken: token)
+//        RCIM.sharedKit().connectWithToken(token, success: { (userId) -> Void in
+//            println("userId \(userId)")
+//            self.showChatView()
+//            }) { (status) -> Void in
+//                println("status \(status)")
+//        }
+//    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
