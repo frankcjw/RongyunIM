@@ -10,6 +10,6 @@ import UIKit
 
 class ChatViewController: RCConversationViewController {
     override func willDisplayConversationTableCell(cell: RCMessageBaseCell!, atIndexPath indexPath: NSIndexPath!) {
-//        cell.
+        super.willDisplayConversationTableCell(cell, atIndexPath: indexPath)
     }
 }

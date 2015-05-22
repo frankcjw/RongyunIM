@@ -180,7 +180,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //        connect("402880ef4b", block: { () -> () in
 //            self.showChatView()
 //        })
-        let tgId = "402880ef4a"
+        let tgId = "100021"
         chat("402880ef4b", targetID: tgId, targetName: tgId)
 
     }
@@ -206,8 +206,6 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
             user.name = "aaa";
             user.portraitUri = "http://avatar.wolaizuo.com/100000_avatar_lOHMcaS8Pv.jpg";
 //            user.portraitUri = "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008"
-
-
         }
         return completion(user);
     }
