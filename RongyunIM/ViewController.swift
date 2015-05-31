@@ -167,9 +167,9 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //        connect("402880ef4a", block: { () -> () in
 //            self.showChatView()
 //        })
-        var tgId = "402880ef4b"
+        var tgId = "100021"
 //        tgId = kefuID
-        chat("402880ef4a", targetID: tgId, targetName: tgId)
+        chat("100022", targetID: tgId, targetName: tgId)
         
     }
     
