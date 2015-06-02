@@ -169,7 +169,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //        })
         var tgId = "100021"
 //        tgId = kefuID
-        chat("100022", targetID: tgId, targetName: tgId)
+        chat("100000", targetID: tgId, targetName: tgId)
         
     }
     
@@ -181,7 +181,7 @@ class ViewController: UIViewController ,RCIMUserInfoFetcherDelegagte{
 //            self.showChatView()
 //        })
         let tgId = "100021"
-        chat("402880ef4b", targetID: tgId, targetName: tgId)
+        chat("100022", targetID: tgId, targetName: tgId)
 
     }
     
